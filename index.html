@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>运动学科 - 随机抽题</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>上岸体育考研抽题工具</title>
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-    <div class="container">
-        <div id="card">🎯 欢迎使用！请点击下方按钮开始</div>
-        
-        <div class="controls">
-            <button class="btn-primary" onclick="showRandomItem()">
-                <span class="icon">🔀</span> 随机抽题/看答案
-            </button>
-            <button class="btn-outline" onclick="switchCategory()">
-                <span class="icon">↔️</span> 切换科目
-            </button>
-        </div>
-        
-        <div class="status">
-            当前科目: <strong id="currentSubject">未开始</strong> | 
-            本场已抽: <strong id="count">0</strong> 道
-        </div>
+  <div class="container">
+    <header>
+      <h1>上岸体育考研抽题工具</h1>
+      <p>随机抽取高频考点，助力高效复习</p>
+    </header>
+
+    <div class="card">
+      <label for="subject">选择主学科：</label>
+      <select id="subject">
+        <option value="">请选择主学科</option>
+      </select>
+
+      <label for="version">选择版本：</label>
+      <select id="version" disabled>
+        <option value="">请先选择主学科</option>
+      </select>
+
+      <button id="draw-btn" disabled>随机抽取题目</button>
     </div>
 
-    <!-- 引入数据和逻辑 -->
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <div class="result" id="result">
+      <p>尚未抽取题目</p>
+    </div>
+
+    <div class="toolbar" id="toolbar" style="display: none;">
+      <button id="copy-btn">📋 复制题目</button>
+      <button id="next-btn">🔄 换一道</button>
+    </div>
+
+    <footer>
+      <p>请关注公众号——体育考研手表
+        <!--<a href="https://github.com/yourname/sports-exam-tool" target="_blank">GitHub</a> -->
+      </p>
+    </footer>
+  </div>
+
+  <!-- 加载配置与逻辑 -->
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
